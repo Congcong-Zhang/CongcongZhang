@@ -7,12 +7,14 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "707",
         pages: "A211",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.1051/0004-6361/202558396",
+        researchgate: "https://www.researchgate.net/publication/400487785_The_gas-phase_nitridation_processes_of_large_astronomically_relevant_polycyclic_aromatic_hydrocarbons_cations_in_the_interstellar_medium",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2025",
@@ -21,12 +23,14 @@ const publications = [
         journal: "The Astrophysical Journal Supplement",
         volume: "280",
         pages: "4",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.3847/1538-4365/adea6b",
+        researchgate: "https://www.researchgate.net/publication/394633774_A_JWST_Study_of_Polycyclic_Aromatic_Hydrocarbon_Emission_in_a_Region_of_30_Doradus",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2023",
@@ -35,12 +39,14 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "669",
         pages: "A41",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.1051/0004-6361/202244951",
+        researchgate: "https://www.researchgate.net/publication/365817076_Laboratory_hydrogenation_of_the_photo-fragments_of_PAH_cations_Co-evolution_interstellar_chemistry",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2022",
@@ -49,12 +55,14 @@ const publications = [
         journal: "The Astrophysical Journal",
         volume: "940",
         pages: "73",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.3847/1538-4357/ac96ee",
+        researchgate: "https://www.researchgate.net/publication/365662505_Gas-phase_HydrogenDeuterium_Exchange_on_Large_Astronomically_Relevant_Cationic_PAHs",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2022",
@@ -63,12 +71,14 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "662",
         pages: "A21",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.1051/0004-6361/202243087",
+        researchgate: "https://www.researchgate.net/publication/363051753_Gas-phase_reaction_of_fullerene_monocations_with_23-benzofluorene_indicates_the_importance_of_charge_exchanges",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2026",
@@ -77,12 +87,14 @@ const publications = [
         journal: "The Astrophysical Journal",
         volume: "996",
         pages: "52",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.3847/1538-4357/ae25fe",
+        researchgate: "https://www.researchgate.net/publication/399045532_The_Gas-phase_Nitridation_Processes_of_Fullerene_Cations_in_the_Interstellar_Medium",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2025",
@@ -91,12 +103,14 @@ const publications = [
         journal: "Monthly Notices of the Royal Astronomical Society",
         volume: "542",
         pages: "2363",
+
         ads: "",
-        doi: "",
+        doi: "https://doi.org/10.1093/mnras/staf1383",
         researchgate: "",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2025",
@@ -105,12 +119,14 @@ const publications = [
         journal: "The Astrophysical Journal Supplement Series",
         volume: "276",
         pages: "26",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.3847/1538-4365/ad9263",
+        researchgate: "https://www.researchgate.net/publication/399421329_Gas-phase_Formation_of_Large_Astronomically_Relevant_Polycyclic_Aromatic_Hydrocarbon_Clusters",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2021",
@@ -119,12 +135,14 @@ const publications = [
         journal: "Monthly Notices of the Royal Astronomical Society",
         volume: "508",
         pages: "3009",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.1093/mnras/stab2723",
+        researchgate: "https://www.researchgate.net/publication/354810296_Gas_phase_laboratory_study_on_the_PAHsamino_acid_cluster_cations",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2025",
@@ -133,12 +151,14 @@ const publications = [
         journal: "The Astrophysical Journal",
         volume: "980",
         pages: "195",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.3847/1538-4357/adabdf",
+        researchgate: "https://www.researchgate.net/publication/389018314_The_Oxidation-Deuteration_Processes_of_Large_Astronomically_Relevant_Cationic_Polycyclic_Aromatic_Hydrocarbons",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2025",
@@ -147,12 +167,14 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "700",
         pages: "A31",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.1051/0004-6361/202555079",
+        researchgate: "https://www.researchgate.net/publication/393094016_Gas-phase_formation_and_photochemistry_of_large_cyano-containing_polycyclic_aromatic_hydrocarbon_clusters",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2022",
@@ -161,12 +183,14 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "663",
         pages: "A52",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.1051/0004-6361/202243386",
+        researchgate: "https://www.researchgate.net/publication/360505581_Theoretical_study_of_the_formation_of_large_astronomically_relevant_PAH-organic_molecule_clusters",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2021",
@@ -175,12 +199,14 @@ const publications = [
         journal: "Monthly Notices of the Royal Astronomical Society",
         volume: "508",
         pages: "4758",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.1093/mnras/stab2823",
+        researchgate: "https://www.researchgate.net/publication/359379208_Gas-phase_formation_of_cationic_fullerene9-aminoanthracene_clusters_an_indicator_for_interstellar_dust_growth",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2021",
@@ -189,12 +215,14 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "656",
         pages: "A80",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.1051/0004-6361/202141407",
+        researchgate: "https://www.researchgate.net/publication/354965162_Gas-phase_laboratory_formation_of_large_astronomically_relevant_PAH-organic_molecule_clusters",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2023",
@@ -203,12 +231,14 @@ const publications = [
         journal: "Earth and Planetary Physics",
         volume: "7(3)",
         pages: "356",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.26464/epp2023036",
+        researchgate: "https://www.researchgate.net/publication/370593287_Constraints_on_water_activity_at_the_Zhurong_landing_site_in_Utopia_Planitia_Mars",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2024",
@@ -217,12 +247,14 @@ const publications = [
         journal: "Acta Astronomica Sinica",
         volume: "65(4)",
         pages: "44",
+
         ads: "",
-        doi: "",
+        doi: "https://doi.org/10.15940/j.cnki.0001-5245.2024.04.011",
         researchgate: "",
         pdf: "",
         bibtex: ""
     },
+
 
     {
         year: "2025",
@@ -231,9 +263,10 @@ const publications = [
         journal: "The Astrophysical Journal",
         volume: "981",
         pages: "193",
+
         ads: "",
-        doi: "",
-        researchgate: "",
+        doi: "https://doi.org/10.3847/1538-4357/adb42d",
+        researchgate: "https://www.researchgate.net/publication/389673094_Gas-phase_Oxygenation_and_Sulfurization_Processes_of_Fullerene_Cations",
         pdf: "",
         bibtex: ""
     }
