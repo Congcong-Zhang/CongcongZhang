@@ -7,6 +7,7 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "707",
         pages: "A211",
+        bibcode: "2026A&A...707A.211Z",
 
         ads: "",
         doi: "https://doi.org/10.1051/0004-6361/202558396",
@@ -23,6 +24,7 @@ const publications = [
         journal: "The Astrophysical Journal Supplement",
         volume: "280",
         pages: "4",
+        bibcode: "2025ApJS..280....4Z",
 
         ads: "",
         doi: "https://doi.org/10.3847/1538-4365/adea6b",
@@ -39,6 +41,7 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "669",
         pages: "A41",
+        bibcode: "2023A&A...669A..41Z",
 
         ads: "",
         doi: "https://doi.org/10.1051/0004-6361/202244951",
@@ -55,6 +58,7 @@ const publications = [
         journal: "The Astrophysical Journal",
         volume: "940",
         pages: "73",
+        bibcode: "2022ApJ...940...73Z",
 
         ads: "",
         doi: "https://doi.org/10.3847/1538-4357/ac96ee",
@@ -71,6 +75,7 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "662",
         pages: "A21",
+        bibcode: "2022A&A...662A..21Z",
 
         ads: "",
         doi: "https://doi.org/10.1051/0004-6361/202243087",
@@ -87,6 +92,7 @@ const publications = [
         journal: "The Astrophysical Journal",
         volume: "996",
         pages: "52",
+        bibcode: "2026ApJ...996...52G",
 
         ads: "",
         doi: "https://doi.org/10.3847/1538-4357/ae25fe",
@@ -103,6 +109,7 @@ const publications = [
         journal: "Monthly Notices of the Royal Astronomical Society",
         volume: "542",
         pages: "2363",
+        bibcode: "2025MNRAS.542.2363G",
 
         ads: "",
         doi: "https://doi.org/10.1093/mnras/staf1383",
@@ -119,6 +126,7 @@ const publications = [
         journal: "The Astrophysical Journal Supplement Series",
         volume: "276",
         pages: "26",
+        bibcode: "2025ApJS..276...26G",
 
         ads: "",
         doi: "https://doi.org/10.3847/1538-4365/ad9263",
@@ -135,6 +143,7 @@ const publications = [
         journal: "Monthly Notices of the Royal Astronomical Society",
         volume: "508",
         pages: "3009",
+        bibcode: "2021MNRAS.508.3009Y",
 
         ads: "",
         doi: "https://doi.org/10.1093/mnras/stab2723",
@@ -151,6 +160,7 @@ const publications = [
         journal: "The Astrophysical Journal",
         volume: "980",
         pages: "195",
+        bibcode: "2025ApJ...980..195H",
 
         ads: "",
         doi: "https://doi.org/10.3847/1538-4357/adabdf",
@@ -167,6 +177,7 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "700",
         pages: "A31",
+        bibcode: "2025A&A...700A..31H",
 
         ads: "",
         doi: "https://doi.org/10.1051/0004-6361/202555079",
@@ -183,6 +194,7 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "663",
         pages: "A52",
+        bibcode: "2022A&A...663A..52Y",
 
         ads: "",
         doi: "https://doi.org/10.1051/0004-6361/202243386",
@@ -199,6 +211,7 @@ const publications = [
         journal: "Monthly Notices of the Royal Astronomical Society",
         volume: "508",
         pages: "4758",
+        bibcode: "2021MNRAS.508.4758H",
 
         ads: "",
         doi: "https://doi.org/10.1093/mnras/stab2823",
@@ -215,6 +228,7 @@ const publications = [
         journal: "Astronomy & Astrophysics",
         volume: "656",
         pages: "A80",
+        bibcode: "2021A&A...656A..80H",
 
         ads: "",
         doi: "https://doi.org/10.1051/0004-6361/202141407",
@@ -231,6 +245,7 @@ const publications = [
         journal: "Earth and Planetary Physics",
         volume: "7(3)",
         pages: "356",
+        bibcode: "",
 
         ads: "",
         doi: "https://doi.org/10.26464/epp2023036",
@@ -247,6 +262,7 @@ const publications = [
         journal: "Acta Astronomica Sinica",
         volume: "65(4)",
         pages: "44",
+        bibcode: "",
 
         ads: "",
         doi: "https://doi.org/10.15940/j.cnki.0001-5245.2024.04.011",
@@ -263,6 +279,7 @@ const publications = [
         journal: "The Astrophysical Journal",
         volume: "981",
         pages: "193",
+        bibcode: "2025ApJ...981..193Z",
 
         ads: "",
         doi: "https://doi.org/10.3847/1538-4357/adb42d",
