@@ -157,7 +157,18 @@ Research Period
 updateStatistics();
 
 
+/* ================================
+   Highlight My Name
+================================ */
 
+function highlightMyName(authors){
+
+    return authors.replace(
+        /Congcong Zhang(\*)?/g,
+        '<strong class="my-name">Congcong Zhang$1</strong>'
+    );
+
+}
 
 
 /* ================================
@@ -336,7 +347,7 @@ ${p.title}
 
 <p class="authors">
 
-${p.authors}
+${highlightMyName(p.authors)}
 
 </p>
 
