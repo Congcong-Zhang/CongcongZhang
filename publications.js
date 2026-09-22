@@ -281,9 +281,9 @@ const publications = [
         year:"2025",
 
         type:[
-            "Co-author"
+            "Co-author",
+            "Corresponding Author"
         ],
-
         keywords:[
             "Ice Chemistry",
             "Photochemistry",
