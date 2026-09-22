@@ -472,3 +472,17 @@ padding:18px;
 
 
 }
+
+/* ==========================
+   Highlight My Name
+========================== */
+
+.my-name {
+    font-weight: 700;
+    color: #2563eb;
+    transition: color 0.2s ease;
+}
+
+.my-name:hover {
+    color: #1e40af;
+}
