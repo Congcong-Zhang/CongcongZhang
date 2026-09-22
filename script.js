@@ -141,11 +141,34 @@ document.addEventListener("DOMContentLoaded", function () {
         /* -----------------------------------------------------
            Browser title
         ----------------------------------------------------- */
-
-        document.title =
-            currentLanguage === "zh"
-                ? "Congcong Zhang | 天体物理研究者"
-                : "Congcong Zhang | Astrophysicist";
+        
+        const pageTitleEn =
+            document.body.dataset.titleEn;
+        
+        const pageTitleZh =
+            document.body.dataset.titleZh;
+        
+        
+        if (
+            pageTitleEn &&
+            pageTitleZh
+        ) {
+        
+            document.title =
+                currentLanguage === "zh"
+                    ? pageTitleZh
+                    : pageTitleEn;
+        
+        }
+        
+        else {
+        
+            document.title =
+                currentLanguage === "zh"
+                    ? "Congcong Zhang | 天体物理研究者"
+                    : "Congcong Zhang | Astrophysicist";
+        
+        }
 
     }
 
