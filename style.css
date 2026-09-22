@@ -1,561 +1,852 @@
-/* ==========================
-   Publication Dashboard
-========================== */
+/* =====================================
+   Congcong Zhang Academic Homepage
+   Academic Minimal Space Theme
+===================================== */
 
 
-.publication-stats{
+/* =====================================
+   Global
+===================================== */
 
-display:grid;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-grid-template-columns:
-repeat(4,1fr);
 
-gap:20px;
+html {
+    scroll-behavior: smooth;
+}
 
-margin:30px 0;
 
+body {
+    font-family:
+        "Inter",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    color: #1d2a3a;
+
+    background: #ffffff;
+
+    line-height: 1.7;
 }
 
 
 
-.stat-card{
+/* =====================================
+   Navigation
+===================================== */
 
-background:white;
+.navbar {
+    position: fixed;
 
-padding:25px;
+    top: 0;
+    left: 0;
 
-border-radius:15px;
+    width: 100%;
+    height: 70px;
 
-box-shadow:
-0 5px 20px rgba(0,0,0,0.08);
+    display: flex;
 
-text-align:center;
+    justify-content: space-between;
+    align-items: center;
 
+    padding: 0 8%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #e8edf2;
 }
 
 
+.logo {
+    font-family: Georgia, serif;
 
-.stat-card h3{
+    font-size: 24px;
 
-font-size:32px;
+    font-weight: bold;
 
-margin:0;
-
-font-weight:700;
-
+    color: #12304a;
 }
 
 
+.nav-links {
+    display: flex;
 
-.stat-card p{
+    align-items: center;
 
-margin-top:10px;
-
-color:#666;
-
-font-size:15px;
-
+    gap: 28px;
 }
 
 
+.nav-links a {
+    text-decoration: none;
 
+    color: #34495e;
 
-/* ==========================
- Search
-========================== */
+    font-size: 15px;
 
-
-.publication-search{
-
-
-width:100%;
-
-padding:15px 20px;
-
-font-size:16px;
-
-border-radius:30px;
-
-border:1px solid #ddd;
-
-margin:20px 0;
-
-
-box-sizing:border-box;
-
-
-}
-
-
-
-.publication-search:focus{
-
-outline:none;
-
-border-color:#333;
-
-}
-
-
-
-
-
-/* ==========================
- Filter Buttons
-========================== */
-
-
-.publication-filter{
-
-
-display:flex;
-
-gap:12px;
-
-flex-wrap:wrap;
-
-margin-bottom:40px;
-
-
-}
-
-
-
-.filter-btn{
-
-
-padding:10px 22px;
-
-border-radius:25px;
-
-border:1px solid #ddd;
-
-background:white;
-
-cursor:pointer;
-
-font-size:14px;
-
-
-transition:.3s;
-
-
-}
-
-
-
-.filter-btn:hover{
-
-
-transform:translateY(-2px);
-
-}
-
-
-
-.filter-btn.active{
-
-
-background:#111;
-
-color:white;
-
-border-color:#111;
-
-
-}
-
-
-
-
-/* ==========================
- Publication Year
-========================== */
-
-
-.publication-year{
-
-
-font-size:26px;
-
-margin-top:45px;
-
-margin-bottom:20px;
-
-border-left:5px solid #111;
-
-padding-left:15px;
-
-
-}
-
-
-
-
-
-/* ==========================
- Publication Card
-========================== */
-
-
-.publication-card{
-
-
-background:white;
-
-
-padding:25px;
-
-
-margin-bottom:25px;
-
-
-border-radius:15px;
-
-
-box-shadow:
-
-0 5px 25px rgba(0,0,0,.08);
-
-
-transition:.3s;
-
-
-}
-
-
-
-.publication-card:hover{
-
-
-transform:translateY(-5px);
-
-
-box-shadow:
-
-0 10px 30px rgba(0,0,0,.12);
-
-
-}
-
-
-
-.publication-card h3{
-
-
-font-size:18px;
-
-line-height:1.5;
-
-margin-bottom:15px;
-
-
-}
-
-
-
-.authors{
-
-
-font-size:15px;
-
-line-height:1.6;
-
-
-}
-
-
-
-
-.journal{
-
-
-color:#555;
-
-margin:15px 0;
-
-
-}
-
-
-
-
-
-/* ==========================
- Tags
-========================== */
-
-
-.tags{
-
-
-margin-top:15px;
-
-}
-
-
-
-.type-tag{
-
-
-display:inline-block;
-
-
-padding:5px 12px;
-
-
-margin-right:8px;
-
-
-border-radius:20px;
-
-
-background:#111;
-
-
-color:white;
-
-
-font-size:12px;
-
-
-}
-
-
-
-
-.keywords{
-
-
-margin-top:15px;
-
-
-}
-
-
-
-.keyword-tag{
-
-
-display:inline-block;
-
-
-padding:5px 12px;
-
-
-margin-right:8px;
-
-
-margin-bottom:8px;
-
-
-border-radius:20px;
-
-
-background:#f0f0f0;
-
-
-font-size:12px;
-
-
-color:#555;
-
-
-}
-
-
-
-
-
-/* ==========================
- Buttons
-========================== */
-
-
-.pub-buttons{
-
-
-margin-top:20px;
-
-
-display:flex;
-
-gap:10px;
-
-flex-wrap:wrap;
-
-
-}
-
-
-
-.pub-buttons a{
-
-
-text-decoration:none;
-
-
-padding:8px 18px;
-
-
-border-radius:20px;
-
-
-background:#111;
-
-
-color:white;
-
-
-font-size:13px;
-
-
-}
-
-
-
-.pub-buttons a:hover{
-
-
-opacity:.8;
-
-
-}
-
-
-
-
-
-/* ==========================
- Responsive
-========================== */
-
-
-@media(max-width:900px){
-
-
-.publication-stats{
-
-
-grid-template-columns:
-repeat(2,1fr);
-
-
-}
-
-
-}
-
-
-
-@media(max-width:600px){
-
-
-.publication-stats{
-
-
-grid-template-columns:
-1fr;
-
-
-}
-
-
-
-.publication-card{
-
-
-padding:18px;
-
-
-}
-
-
-}
-
-/* ==========================
-   Highlight My Name
-========================== */
-
-.my-name {
-    font-weight: 700;
-    color: #2563eb;
     transition: color 0.2s ease;
 }
+
+
+.nav-links a:hover {
+    color: #0d5c8f;
+}
+
+
+#languageBtn {
+    border: 1px solid #ccd6df;
+
+    background: white;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+#languageBtn:hover {
+    color: #0d5c8f;
+
+    border-color: #0d5c8f;
+
+    background: #f8fafc;
+}
+
+
+
+/* =====================================
+   Hero
+===================================== */
+
+.hero {
+    height: 90vh;
+
+    min-height: 650px;
+
+    background-image:
+        url("assets/nebula.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    color: white;
+}
+
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 20, 38, 0.90),
+            rgba(5, 25, 45, 0.55),
+            rgba(5, 20, 35, 0.25)
+        );
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 84%;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+/* Profile photo */
+
+.profile {
+    width: 210px;
+
+    height: 210px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 6px solid rgba(255, 255, 255, 0.30);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+.intro h1 {
+    font-family: Georgia, serif;
+
+    font-size: 64px;
+
+    line-height: 1.15;
+
+    margin-bottom: 10px;
+}
+
+
+.intro h2 {
+    font-size: 28px;
+
+    font-weight: 400;
+}
+
+
+.intro p {
+    margin-top: 20px;
+
+    max-width: 600px;
+
+    font-size: 20px;
+
+    font-style: italic;
+}
+
+
+.links {
+    margin-top: 30px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.links a {
+    display: inline-block;
+
+    padding: 10px 22px;
+
+    border-radius: 25px;
+
+    background: white;
+
+    color: #10283d;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.links a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+
+/* =====================================
+   General Sections
+===================================== */
+
+.section {
+    padding: 90px 10%;
+}
+
+
+.section h2 {
+    font-family: Georgia, serif;
+
+    font-size: 40px;
+
+    margin-bottom: 45px;
+
+    color: #10283d;
+}
+
+
+.gray {
+    background: #f6f8fa;
+}
+
+
+
+/* =====================================
+   About
+===================================== */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    gap: 60px;
+}
+
+
+.about-grid p {
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+.info-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.info-card h3 {
+    color: #12304a;
+
+    margin-bottom: 10px;
+}
+
+
+
+/* =====================================
+   Research Cards
+===================================== */
+
+.research-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.research-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 1px solid #e5ebf0;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.research-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+.research-card h3 {
+    font-family: Georgia, serif;
+
+    color: #173b58;
+
+    margin-bottom: 15px;
+}
+
+
+
+/* =========================================================
+   PUBLICATION DASHBOARD
+========================================================= */
+
+
+/* =====================================
+   Statistics
+===================================== */
+
+.publication-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin: 0 0 30px 0;
+}
+
+
+.stat-card {
+    background: #ffffff;
+
+    padding: 25px 18px;
+
+    border: 1px solid #e5ebf0;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.09);
+}
+
+
+.stat-card h3 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    color: #12304a;
+
+    font-weight: 700;
+}
+
+
+.stat-card p {
+    margin-top: 9px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+
+/* =====================================
+   Publication Search
+===================================== */
+
+.publication-search {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 20px;
+
+    margin: 10px 0 20px 0;
+
+    border: 1px solid #d8dee8;
+
+    border-radius: 25px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #1d2a3a;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.publication-search::placeholder {
+    color: #9ca3af;
+}
+
+
+.publication-search:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+
+/* =====================================
+   Publication Filters
+===================================== */
+
+.publication-filter {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+}
+
+
+.filter-btn {
+    padding: 9px 18px;
+
+    border: 1px solid #d8dee8;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+
+    color: #1e3a8a;
+
+    border-color: #2563eb;
+}
+
+
+.filter-btn.active {
+    background: #12304a;
+
+    color: #ffffff;
+
+    border-color: #12304a;
+
+    box-shadow:
+        0 5px 15px rgba(18, 48, 74, 0.18);
+}
+
+
+
+/* =====================================
+   Publication Year Heading
+===================================== */
+
+.publication-year {
+    margin-top: 48px;
+
+    margin-bottom: 20px;
+
+    padding-left: 15px;
+
+    border-left: 4px solid #2563eb;
+
+    font-family: Georgia, serif;
+
+    font-size: 27px;
+
+    line-height: 1.2;
+
+    color: #12304a;
+}
+
+
+#publication-container > .publication-year:first-child {
+    margin-top: 10px;
+}
+
+
+
+/* =====================================
+   Publication Card
+===================================== */
+
+.publication-card {
+    position: relative;
+
+    background: #ffffff;
+
+    padding: 27px 28px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid #e8edf2;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 22px rgba(0, 0, 0, 0.055);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.publication-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #d7e0e8;
+
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.09);
+}
+
+
+.publication-card h3,
+.publication-title {
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    color: #173b58;
+}
+
+
+
+/* =====================================
+   Publication Authors
+===================================== */
+
+.authors {
+    margin: 0 0 8px 0;
+
+    color: #4b5563;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* Highlight Congcong Zhang */
+
+.my-name {
+    color: #2563eb;
+
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
 
 .my-name:hover {
     color: #1e40af;
 }
 
-/* =========================================================
-   Publication Dashboard - Final Enhancements
-========================================================= */
 
 
+/* =====================================
+   Journal
+===================================== */
 
-/* Publication title */
+.journal {
+    margin: 10px 0 0 0;
 
-.publication-title {
-    margin-top: 0;
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 1.6;
 }
 
 
-/* Make keyword spans into real clickable buttons */
+.journal em {
+    color: #4b5563;
+}
 
-.keyword-tag {
-    display: inline-block;
 
-    padding: 5px 12px;
 
-    margin-right: 8px;
-    margin-bottom: 8px;
+/* =====================================
+   Author Type Tags
+===================================== */
 
-    border: 1px solid transparent;
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 16px;
+}
+
+
+.type-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 11px;
+
     border-radius: 20px;
 
-    background: #f0f0f0;
+    background: #12304a;
 
-    color: #555;
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+
+/* =====================================
+   Research Topic Tags
+===================================== */
+
+.keywords {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 12px;
+}
+
+
+.keyword-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 11px;
+
+    margin: 0;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    background: #f6f8fa;
+
+    color: #536273;
 
     font-family: inherit;
+
     font-size: 12px;
+
+    line-height: 1.4;
 
     cursor: pointer;
 
     transition:
         background 0.2s ease,
         color 0.2s ease,
+        border-color 0.2s ease,
         transform 0.2s ease;
 }
 
 
 .keyword-tag:hover {
-    background: #e5e7eb;
-    color: #111;
+    background: #edf4ff;
+
+    color: #1d4ed8;
+
+    border-color: #bfdbfe;
 
     transform: translateY(-1px);
 }
 
 
-/* Publication buttons */
+
+/* =====================================
+   Publication Buttons
+===================================== */
+
+.pub-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
 
 .pub-button {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
-    padding: 8px 16px;
+    padding: 7px 14px;
 
-    border: 1px solid #111;
+    border: 1px solid #d8dee8;
+
     border-radius: 20px;
 
-    background: #111;
+    background: #ffffff;
 
-    color: #fff;
+    color: #1e3a8a;
 
     font-family: inherit;
-    font-size: 13px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
 
     text-decoration: none;
 
@@ -563,32 +854,53 @@ padding:18px;
 
     transition:
         transform 0.2s ease,
-        opacity 0.2s ease;
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
 .pub-button:hover {
-    opacity: 0.82;
     transform: translateY(-1px);
+
+    background: #12304a;
+
+    color: #ffffff;
+
+    border-color: #12304a;
+
+    box-shadow:
+        0 5px 12px rgba(18, 48, 74, 0.15);
 }
 
 
-/* Empty search result */
+
+/* =====================================
+   Empty Search Result
+===================================== */
 
 .publication-empty {
     padding: 50px 20px;
 
+    border: 1px solid #e5ebf0;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
     text-align: center;
 
-    color: #666;
+    color: #6b7280;
 }
 
 
 .publication-empty h3 {
     margin-bottom: 8px;
 
-    color: #222;
+    color: #173b58;
 }
+
 
 
 /* =========================================================
@@ -605,11 +917,17 @@ padding:18px;
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 20px;
 
-    background: rgba(0, 0, 0, 0.55);
+    background:
+        rgba(3, 20, 38, 0.68);
+
+    backdrop-filter: blur(4px);
+
+    -webkit-backdrop-filter: blur(4px);
 }
 
 
@@ -628,43 +946,55 @@ padding:18px;
 
     border-radius: 16px;
 
-    background: #fff;
+    background: #ffffff;
 
     box-shadow:
-        0 24px 70px rgba(0, 0, 0, 0.25);
+        0 24px 70px rgba(0, 0, 0, 0.28);
 }
 
 
 .bibtex-modal h3 {
     margin-top: 0;
+
     margin-bottom: 10px;
 
+    font-family: Georgia, serif;
+
     font-size: 24px;
+
+    color: #12304a;
 }
 
 
 .bibtex-paper-title {
     margin-bottom: 18px;
 
-    color: #666;
+    color: #667085;
 
     font-size: 14px;
+
     line-height: 1.5;
 }
 
 
 .bibtex-modal textarea {
     width: 100%;
+
     height: 280px;
 
     box-sizing: border-box;
 
     padding: 16px;
 
-    border: 1px solid #ddd;
+    border: 1px solid #d8dee8;
+
     border-radius: 10px;
 
-    background: #f8f8f8;
+    outline: none;
+
+    background: #f8fafc;
+
+    color: #1f2937;
 
     font-family:
         "SFMono-Regular",
@@ -673,9 +1003,18 @@ padding:18px;
         monospace;
 
     font-size: 13px;
+
     line-height: 1.6;
 
     resize: vertical;
+}
+
+
+.bibtex-modal textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.08);
 }
 
 
@@ -683,6 +1022,7 @@ padding:18px;
     position: absolute;
 
     top: 12px;
+
     right: 16px;
 
     padding: 4px 8px;
@@ -691,9 +1031,10 @@ padding:18px;
 
     background: transparent;
 
-    color: #555;
+    color: #667085;
 
     font-size: 30px;
+
     line-height: 1;
 
     cursor: pointer;
@@ -701,7 +1042,7 @@ padding:18px;
 
 
 .bibtex-close:hover {
-    color: #000;
+    color: #12304a;
 }
 
 
@@ -711,32 +1052,257 @@ padding:18px;
     padding: 10px 18px;
 
     border: 0;
+
     border-radius: 8px;
 
-    background: #111;
+    background: #12304a;
 
-    color: #fff;
+    color: #ffffff;
 
     font-family: inherit;
+
     font-size: 14px;
 
     cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
 }
 
 
 .copy-bibtex:hover {
-    opacity: 0.85;
+    background: #174b73;
+
+    transform: translateY(-1px);
 }
 
 
+
+/* =====================================
+   Projects
+===================================== */
+
+.timeline {
+    list-style: none;
+}
+
+
+.timeline li {
+    background: white;
+
+    margin-bottom: 15px;
+
+    padding: 20px;
+
+    border-left: 4px solid #174b73;
+}
+
+
+
+/* =====================================
+   Contact
+===================================== */
+
+.contact {
+    padding: 80px 10%;
+
+    background: #10283d;
+
+    color: white;
+}
+
+
+.contact h2 {
+    font-family: Georgia, serif;
+
+    font-size: 40px;
+}
+
+
+
+/* =====================================
+   Footer
+===================================== */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    background: #081b2b;
+
+    color: white;
+}
+
+
+
+/* =========================================================
+   Tablet
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .research-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .publication-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+
+/* =========================================================
+   Mobile
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links a {
+        display: none;
+    }
+
+
+    .hero {
+        height: auto;
+
+        min-height: 720px;
+
+        padding-top: 110px;
+
+        padding-bottom: 70px;
+    }
+
+
+    .hero-content {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 30px;
+    }
+
+
+    .intro h1 {
+        font-size: 42px;
+    }
+
+
+    .intro h2 {
+        font-size: 23px;
+    }
+
+
+    .intro p {
+        font-size: 17px;
+    }
+
+
+    .profile {
+        width: 150px;
+
+        height: 150px;
+    }
+
+
+    .links {
+        justify-content: center;
+    }
+
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .section h2 {
+        font-size: 32px;
+    }
+
+}
+
+
+
 @media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+
+    .logo {
+        font-size: 20px;
+    }
+
+
+    .section {
+        padding: 70px 6%;
+    }
+
+
+    .publication-stats {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .stat-card {
+        padding: 20px;
+    }
+
+
+    .publication-filter {
+        gap: 8px;
+    }
+
+
+    .filter-btn {
+        padding: 8px 13px;
+
+        font-size: 12px;
+    }
+
+
+    .publication-card {
+        padding: 20px 18px;
+    }
+
+
+    .publication-card h3,
+    .publication-title {
+        font-size: 16px;
+    }
+
+
+    .publication-year {
+        font-size: 23px;
+    }
+
 
     .bibtex-modal {
         padding: 24px 18px;
     }
 
+
     .bibtex-modal textarea {
         height: 230px;
+    }
+
+
+    .contact {
+        padding: 70px 6%;
     }
 
 }
