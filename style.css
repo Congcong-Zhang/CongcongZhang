@@ -1306,3 +1306,338 @@ footer {
     }
 
 }
+
+/* =========================================================
+   Conferences & Presentations
+========================================================= */
+
+
+.conference-page {
+    min-height: 100vh;
+
+    padding-top: 70px;
+
+    background: #f6f8fa;
+}
+
+
+
+/* =========================
+   Header
+========================= */
+
+.conference-header {
+    padding: 90px 10% 60px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #081b2b,
+            #12304a
+        );
+
+    color: #ffffff;
+}
+
+
+.conference-eyebrow {
+    margin-bottom: 12px;
+
+    color: #93c5fd;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+.conference-header h1 {
+    max-width: 850px;
+
+    font-family: Georgia, serif;
+
+    font-size: 52px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+
+.conference-intro {
+    max-width: 760px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+.back-home {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.45);
+
+    transition:
+        opacity 0.2s ease;
+}
+
+
+.back-home:hover {
+    opacity: 0.72;
+}
+
+
+
+/* =========================
+   Conference List
+========================= */
+
+.conference-list {
+    width: min(1100px, 80%);
+
+    margin: 0 auto;
+
+    padding: 65px 0 100px;
+}
+
+
+
+/* =========================
+   Year
+========================= */
+
+.conference-year {
+    margin-top: 60px;
+
+    margin-bottom: 22px;
+
+    padding-left: 15px;
+
+    border-left: 4px solid #2563eb;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    color: #12304a;
+}
+
+
+.conference-year:first-child {
+    margin-top: 0;
+}
+
+
+
+/* =========================
+   Conference Card
+========================= */
+
+.conference-card {
+    display: grid;
+
+    grid-template-columns:
+        130px 1fr;
+
+    gap: 28px;
+
+    margin-bottom: 18px;
+
+    padding: 26px 28px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e5ebf0;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.045);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.conference-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #d5e0ea;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+
+/* =========================
+   Date
+========================= */
+
+.conference-date {
+    padding-top: 3px;
+
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+
+/* =========================
+   Content
+========================= */
+
+.conference-content h3 {
+    margin: 0 0 6px 0;
+
+    color: #173b58;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    line-height: 1.45;
+}
+
+
+.conference-name {
+    margin-bottom: 9px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+.conference-talk {
+    margin-top: 8px;
+
+    color: #334155;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.65;
+}
+
+
+.conference-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+
+.conference-meta span {
+    display: inline-block;
+
+    padding: 4px 10px;
+
+    border-radius: 16px;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+
+/* =========================================================
+   Conference Mobile
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .conference-header {
+        padding:
+            70px 7%
+            50px;
+    }
+
+
+    .conference-header h1 {
+        font-size: 40px;
+    }
+
+
+    .conference-list {
+        width: 86%;
+    }
+
+
+    .conference-card {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .conference-header {
+        padding:
+            60px 6%
+            45px;
+    }
+
+
+    .conference-header h1 {
+        font-size: 34px;
+    }
+
+
+    .conference-intro {
+        font-size: 16px;
+    }
+
+
+    .conference-list {
+        width: 88%;
+
+        padding-top: 45px;
+    }
+
+
+    .conference-card {
+        padding: 21px 18px;
+    }
+
+
+    .conference-year {
+        font-size: 25px;
+    }
+
+}
