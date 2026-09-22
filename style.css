@@ -486,3 +486,257 @@ padding:18px;
 .my-name:hover {
     color: #1e40af;
 }
+
+/* =========================================================
+   Publication Dashboard - Final Enhancements
+========================================================= */
+
+
+
+/* Publication title */
+
+.publication-title {
+    margin-top: 0;
+}
+
+
+/* Make keyword spans into real clickable buttons */
+
+.keyword-tag {
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+    border: 1px solid transparent;
+    border-radius: 20px;
+
+    background: #f0f0f0;
+
+    color: #555;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.keyword-tag:hover {
+    background: #e5e7eb;
+    color: #111;
+
+    transform: translateY(-1px);
+}
+
+
+/* Publication buttons */
+
+.pub-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 16px;
+
+    border: 1px solid #111;
+    border-radius: 20px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.pub-button:hover {
+    opacity: 0.82;
+    transform: translateY(-1px);
+}
+
+
+/* Empty search result */
+
+.publication-empty {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #666;
+}
+
+
+.publication-empty h3 {
+    margin-bottom: 8px;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   BibTeX Modal
+========================================================= */
+
+.bibtex-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.55);
+}
+
+
+.bibtex-modal {
+    position: relative;
+
+    width: min(720px, 100%);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    background: #fff;
+
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+
+.bibtex-modal h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-size: 24px;
+}
+
+
+.bibtex-paper-title {
+    margin-bottom: 18px;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+.bibtex-modal textarea {
+    width: 100%;
+    height: 280px;
+
+    box-sizing: border-box;
+
+    padding: 16px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    background: #f8f8f8;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    resize: vertical;
+}
+
+
+.bibtex-close {
+    position: absolute;
+
+    top: 12px;
+    right: 16px;
+
+    padding: 4px 8px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #555;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+.bibtex-close:hover {
+    color: #000;
+}
+
+
+.copy-bibtex {
+    margin-top: 15px;
+
+    padding: 10px 18px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+.copy-bibtex:hover {
+    opacity: 0.85;
+}
+
+
+@media (max-width: 600px) {
+
+    .bibtex-modal {
+        padding: 24px 18px;
+    }
+
+    .bibtex-modal textarea {
+        height: 230px;
+    }
+
+}
