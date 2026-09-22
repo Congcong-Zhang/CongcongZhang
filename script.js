@@ -1,242 +1,625 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+"DOMContentLoaded",
+function(){
 
-    const container = document.getElementById("publication-container");
 
-    if (!container || typeof publications === "undefined") {
-        return;
-    }
+/* =================================
+   Publication Dashboard
+================================= */
 
-    function generateBibTeX(pub) {
 
-        const firstAuthor = pub.authors
-            .split(",")[0]
-            .replace("*", "")
-            .trim();
+const container =
+document.getElementById(
+"publication-container"
+);
 
-        const authorParts = firstAuthor.split(" ");
 
-        const lastName = authorParts.length > 1
-            ? authorParts[authorParts.length - 1]
-            : firstAuthor;
 
-        const key = `${lastName}${pub.year}`;
+if(
+container &&
+typeof publications !== "undefined"
+){
 
-        return `@article{${key},
-  author = {${pub.authors.replace("*", "")}},
-  title = {${pub.title}},
-  journal = {${pub.journal}},
-  year = {${pub.year}},
-  volume = {${pub.volume}},
-  pages = {${pub.pages}}
-}`;
-    }
 
+let currentFilter = "All";
 
-    function publicationButtons(pub) {
+let searchKeyword = "";
 
-        let buttons = "";
 
 
-        // ADS
-        if (pub.bibcode) {
+/* ================================
+   Statistics
+================================ */
 
-            const adsURL =
-                `https://ui.adsabs.harvard.edu/abs/${encodeURIComponent(pub.bibcode)}`;
 
-            buttons += `
-                <a
-                    href="${adsURL}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="pub-button">
-                    ADS
-                </a>
-            `;
-        }
+function updateStatistics(){
 
 
-        // DOI
-        if (pub.doi) {
+const total =
+publications.length;
 
-            buttons += `
-                <a
-                    href="${pub.doi}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="pub-button">
-                    DOI
-                </a>
-            `;
-        }
 
 
-        // ResearchGate
-        if (pub.researchgate) {
+const firstAuthor =
+publications.filter(
+p =>
+p.type.includes(
+"First Author"
+)
+).length;
 
-            buttons += `
-                <a
-                    href="${pub.researchgate}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="pub-button">
-                    ResearchGate
-                </a>
-            `;
-        }
 
 
-        // BibTeX
-        buttons += `
-            <button
-                class="pub-button bibtex-button"
-                data-bibtex="${encodeURIComponent(generateBibTeX(pub))}">
-                BibTeX
-            </button>
-        `;
+const corresponding =
+publications.filter(
+p =>
+p.type.includes(
+"Corresponding Author"
+)
+).length;
 
 
-        return buttons;
-    }
 
+const years =
+publications.map(
+p =>
+Number(p.year)
+);
 
-    container.innerHTML = publications.map(pub => `
 
-        <article class="publication-card">
 
-            <div class="publication-year">
-                ${pub.year}
-            </div>
+const period =
+Math.min(...years)
++
+" - "
++
+Math.max(...years);
 
-            <div class="publication-content">
 
-                <h3>
-                    ${pub.title}
-                </h3>
 
-                <p class="publication-authors">
-                    ${pub.authors}
-                </p>
+const stats =
+document.getElementById(
+"publication-stats"
+);
 
-                <p class="publication-journal">
 
-                    <em>${pub.journal}</em>,
-                    ${pub.volume},
-                    ${pub.pages}
 
-                </p>
+if(stats){
 
-                <div class="publication-buttons">
 
-                    ${publicationButtons(pub)}
+stats.innerHTML = `
 
-                </div>
 
-            </div>
+<div class="stat-card">
 
-        </article>
+<h3>
+${total}
+</h3>
 
-    `).join("");
+<p>
+Publications
+</p>
 
+</div>
 
-    /*
-     * BibTeX popup
-     */
 
-    document.addEventListener("click", function (event) {
 
-        if (!event.target.classList.contains("bibtex-button")) {
-            return;
-        }
+<div class="stat-card">
 
-        const bibtex =
-            decodeURIComponent(event.target.dataset.bibtex);
+<h3>
+${firstAuthor}
+</h3>
 
-        showBibTeXPopup(bibtex);
+<p>
+First Author
+</p>
 
-    });
+</div>
 
 
-    function showBibTeXPopup(bibtex) {
 
-        const existing =
-            document.getElementById("bibtex-popup");
+<div class="stat-card">
 
-        if (existing) {
-            existing.remove();
-        }
+<h3>
+${corresponding}
+</h3>
 
+<p>
+Corresponding Author
+</p>
 
-        const popup = document.createElement("div");
+</div>
 
-        popup.id = "bibtex-popup";
 
-        popup.innerHTML = `
 
-            <div class="bibtex-overlay">
+<div class="stat-card">
 
-                <div class="bibtex-modal">
+<h3>
+${period}
+</h3>
 
-                    <button
-                        class="bibtex-close"
-                        id="bibtex-close">
-                        ×
-                    </button>
+<p>
+Research Period
+</p>
 
-                    <h3>
-                        BibTeX
-                    </h3>
+</div>
 
-                    <textarea
-                        id="bibtex-text"
-                        readonly>${bibtex}</textarea>
 
-                    <button
-                        id="copy-bibtex"
-                        class="copy-bibtex">
-                        Copy BibTeX
-                    </button>
+`;
 
-                </div>
+}
 
-            </div>
 
-        `;
+}
 
-        document.body.appendChild(popup);
 
 
-        document
-            .getElementById("bibtex-close")
-            .addEventListener("click", function () {
+updateStatistics();
 
-                popup.remove();
 
-            });
 
 
-        document
-            .getElementById("copy-bibtex")
-            .addEventListener("click", function () {
 
-                const textarea =
-                    document.getElementById("bibtex-text");
+/* ================================
+   Render Publications
+================================ */
 
-                navigator.clipboard
-                    .writeText(textarea.value)
-                    .then(() => {
 
-                        this.textContent = "Copied!";
+function renderPublications(){
 
-                        setTimeout(() => {
 
-                            this.textContent = "Copy BibTeX";
+container.innerHTML="";
 
-                        }, 1500);
 
-                    });
 
-            });
+let filtered =
+publications.filter(
+p=>{
 
-    }
+
+let typeMatch =
+(
+currentFilter==="All"
+||
+p.type.includes(
+currentFilter
+)
+);
+
+
+
+let searchable =
+(
+p.title
++
+p.authors
++
+p.journal
++
+p.keywords.join(" ")
++
+p.year
+)
+.toLowerCase();
+
+
+
+let searchMatch =
+searchable.includes(
+searchKeyword.toLowerCase()
+);
+
+
+
+return (
+typeMatch
+&&
+searchMatch
+);
+
+
+});
+
+
+
+
+/*
+按年份排序
+*/
+
+filtered.sort(
+(a,b)=>
+Number(b.year)
+-
+Number(a.year)
+);
+
+
+
+let currentYear="";
+
+
+
+filtered.forEach(
+p=>{
+
+
+if(
+p.year !== currentYear
+){
+
+
+currentYear =
+p.year;
+
+
+
+let yearTitle =
+document.createElement(
+"h3"
+);
+
+
+yearTitle.className =
+"publication-year";
+
+
+yearTitle.innerHTML =
+p.year;
+
+
+
+container.appendChild(
+yearTitle
+);
+
+
+}
+
+
+
+
+let card =
+document.createElement(
+"div"
+);
+
+
+card.className =
+"publication-card";
+
+
+
+
+
+let typeTags =
+p.type.map(
+type =>
+`
+<span class="type-tag">
+${type}
+</span>
+
+`
+)
+.join("");
+
+
+
+
+
+let keywords =
+p.keywords.map(
+keyword =>
+`
+<span class="keyword-tag">
+${keyword}
+</span>
+`
+)
+.join("");
+
+
+
+
+
+card.innerHTML = `
+
+
+<h3>
+
+${p.title}
+
+</h3>
+
+
+
+<p class="authors">
+
+${p.authors}
+
+</p>
+
+
+
+
+<p class="journal">
+
+
+<i>
+${p.journal}
+</i>
+
+${p.volume},
+
+${p.pages}
+
+
+</p>
+
+
+
+
+
+<div class="tags">
+
+${typeTags}
+
+</div>
+
+
+
+
+<div class="keywords">
+
+${keywords}
+
+</div>
+
+
+
+
+
+<div class="pub-buttons">
+
+
+${
+p.ads
+?
+`
+<a 
+href="${p.ads}"
+target="_blank">
+
+ADS
+
+</a>
+`
+:
+""
+}
+
+
+
+${
+p.doi
+?
+`
+<a 
+href="${p.doi}"
+target="_blank">
+
+DOI
+
+</a>
+
+`
+:
+""
+}
+
+
+
+
+
+${
+p.researchgate
+?
+`
+<a
+href="${p.researchgate}"
+target="_blank">
+
+ResearchGate
+
+</a>
+
+`
+:
+""
+}
+
+
+
+
+
+${
+p.pdf
+?
+`
+<a
+href="${p.pdf}"
+target="_blank">
+
+PDF
+
+</a>
+
+`
+:
+""
+}
+
+
+
+</div>
+
+
+
+`;
+
+
+
+container.appendChild(
+card
+);
+
+
+
+});
+
+
+}
+
+
+
+
+renderPublications();
+
+
+
+
+
+
+/* ================================
+   Search
+================================ */
+
+
+const search =
+document.getElementById(
+"publication-search"
+);
+
+
+
+if(search){
+
+
+search.addEventListener(
+"input",
+function(){
+
+
+searchKeyword =
+this.value;
+
+
+
+renderPublications();
+
+
+}
+
+);
+
+
+}
+
+
+
+
+
+
+/* ================================
+   Filter
+================================ */
+
+
+const buttons =
+document.querySelectorAll(
+".filter-btn"
+);
+
+
+
+buttons.forEach(
+button=>{
+
+
+button.addEventListener(
+"click",
+function(){
+
+
+
+currentFilter =
+this.dataset.filter;
+
+
+
+buttons.forEach(
+b =>
+b.classList.remove(
+"active"
+)
+);
+
+
+
+this.classList.add(
+"active"
+);
+
+
+
+renderPublications();
+
+
+
+});
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+/* =================================
+   Language Button
+================================= */
+
+
+const languageBtn =
+document.getElementById(
+"languageBtn"
+);
+
+
+
+if(languageBtn){
+
+
+languageBtn.onclick =
+function(){
+
+
+alert(
+"Chinese / English version will be added in the next update."
+);
+
+
+};
+
+
+}
+
+
 
 });
